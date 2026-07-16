@@ -7,7 +7,6 @@ Template para criação de blogs estáticos utilizando Astro e Cloudflare.
 Este repositório serve como base para projetos de blogs reutilizáveis.
 
 Características:
-
 - Astro
 - TypeScript
 - Docker para desenvolvimento
@@ -20,26 +19,24 @@ Características:
 - Docker
 - Docker Compose
 
-Não é necessário instalar Node.js ou Astro no host.
+>Não é necessário instalar Node.js ou Astro no host.
 
 ## Desenvolvimento
 
 Construir a imagem:
-
-docker compose build
+`docker compose build`
 
 Iniciar o ambiente:
-
-docker compose up
+`docker compose up`
 
 A aplicação estará disponível em:
-
-http://localhost:4321
+`http://localhost:4321`
 
 ## Reconstrução completa
 
 Caso seja necessário recriar o ambiente do zero:
 
+```bash
 docker compose down -v
 docker image rm astro-blog-template-app
 rm -rf node_modules
@@ -47,3 +44,4 @@ rm -rf .astro
 
 docker compose build
 docker compose up
+```

@@ -1,46 +1,49 @@
-# Astro Starter Kit: Basics
+# astro-blog-template
 
-```sh
-npm create astro@latest -- --template basics
-```
+Template para criação de blogs estáticos utilizando Astro e Cloudflare.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Objetivo
 
-## 🚀 Project Structure
+Este repositório serve como base para projetos de blogs reutilizáveis.
 
-Inside of your Astro project, you'll see the following folders and files:
+Características:
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+- Astro
+- TypeScript
+- Docker para desenvolvimento
+- Cloudflare Pages
+- Cloudflare R2 (futuramente)
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Pré-requisitos
 
-## 🧞 Commands
+- Git
+- Docker
+- Docker Compose
 
-All commands are run from the root of the project, from a terminal:
+Não é necessário instalar Node.js ou Astro no host.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Desenvolvimento
 
-## 👀 Want to learn more?
+Construir a imagem:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+docker compose build
+
+Iniciar o ambiente:
+
+docker compose up
+
+A aplicação estará disponível em:
+
+http://localhost:4321
+
+## Reconstrução completa
+
+Caso seja necessário recriar o ambiente do zero:
+
+docker compose down -v
+docker image rm astro-blog-template-app
+rm -rf node_modules
+rm -rf .astro
+
+docker compose build
+docker compose up

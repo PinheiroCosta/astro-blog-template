@@ -12,11 +12,7 @@ export default [
 
   // Configurações comuns para todo o projeto
   {
-    ignores: [
-        ".astro/",
-        "dist/",
-        "node_modules"
-    ],
+    ignores: [".astro/", "dist/", "node_modules"],
     languageOptions: {
       globals: {
         ...globals.browser,

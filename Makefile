@@ -1,4 +1,4 @@
-.PHONY: build up down clean rebuild shell logs lint build-app astro-check
+.PHONY: build up down clean rebuild shell logs lint format format-check build-app astro-check
 
 build:
 	docker compose build
@@ -24,6 +24,12 @@ logs:
 
 lint:
 	docker compose exec app npm run lint
+
+format:
+	docker compose exec app npm run format
+
+format-check:
+	docker compose exec app npm run format:check
 
 build-app:
 	docker compose exec app npm run build

@@ -10,7 +10,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "eslint .",
+    "lint": "eslint src eslint.config.js astro.config.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
@@ -22,6 +22,7 @@
     "@eslint/js": "^10.0.1",
     "@typescript-eslint/parser": "^8.65.0",
     "eslint": "^10.8.0",
+    "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-astro": "^3.0.1",
     "globals": "^17.8.0",
     "jiti": "^2.7.0",

@@ -2,17 +2,14 @@ import js from "@eslint/js";
 import tseslint from "typescript-eslint";
 import globals from "globals";
 import eslintPluginAstro from "eslint-plugin-astro";
+import eslintConfigPrettier from "eslint-config-prettier";
 
 export default [
   js.configs.recommended,
-
   ...tseslint.configs.recommended,
-
   ...eslintPluginAstro.configs.recommended,
 
-  // Configurações comuns para todo o projeto
   {
-    ignores: [".astro/", "dist/", "node_modules"],
     languageOptions: {
       globals: {
         ...globals.browser,
@@ -21,11 +18,13 @@ export default [
     },
   },
 
-  // Espaço reservado para regras específicas do projeto
   {
     rules: {
       // Exemplo:
       // "astro/no-set-html-directive": "error",
     },
   },
+  // A ordem importa, a configuração do prettier precisa ser o ultimo item do array
+  // pois ele sobrescreve regras de formatação vindas das configurações anteriores.
+  eslintConfigPrettier,
 ];

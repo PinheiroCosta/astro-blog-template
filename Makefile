@@ -1,4 +1,4 @@
-.PHONY: build up down clean rebuild shell logs lint format format-check build-app astro-check
+.PHONY: build up down clean rebuild shell logs lint format format-check build-app astro-check setup
 
 build:
 	docker compose build
@@ -36,3 +36,8 @@ build-app:
 
 astro-check:
 	docker compose exec app npm run astro check
+
+setup:
+	@echo "Configurando hooks do Git..."
+	git config core.hooksPath .husky/
+	@echo "Hooks configurados com sucesso."

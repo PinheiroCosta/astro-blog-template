@@ -23,7 +23,11 @@ logs:
 	docker compose logs -f
 
 lint:
-	docker compose exec app npm run lint
+	@if docker compose ps --status running app | grep -q app; then \
+		docker compose exec -T app npm run lint; \
+	else \
+		docker compose run --rm app npm run lint; \
+	fi
 
 format:
 	docker compose exec app npm run format

@@ -5,6 +5,15 @@
   "engines": {
     "node": ">=22.12.0"
   },
+  "lint-staged": {
+    "*.{js,mjs,cjs,ts,mts,cts,astro}": [
+      "prettier --write",
+      "eslint"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ]
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -13,7 +22,8 @@
     "lint": "eslint src eslint.config.js astro.config.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "pre-commit": "lint-staged"
   },
   "dependencies": {
     "astro": "^7.0.9"
@@ -28,6 +38,7 @@
     "globals": "^17.8.0",
     "husky": "^9.1.7",
     "jiti": "^2.7.0",
+    "lint-staged": "^17.3.0",
     "prettier": "3.9.6",
     "prettier-plugin-astro": "0.14.1",
     "typescript": "^6.0.3",

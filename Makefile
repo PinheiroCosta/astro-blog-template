@@ -71,6 +71,18 @@ build-app:
 # ==============================================================================
 # INTERNAL
 # ==============================================================================
+UID := $(shell id -u)
+GID := $(shell id -g)
+
+APP_SERVICE := app
+DOCKER_EXEC = docker compose exec -T \
+    --user $(UID):$(GID) \
+    $(APP_SERVICE)
+
+DOCKER_RUN = docker compose run --rm \
+    --user $(UID):$(GID) \
+    $(APP_SERVICE)
+
 # Executa um comando dentro do container da aplicação.
 #
 # Se o ambiente já estiver em execução, utiliza `docker compose exec`
@@ -82,11 +94,10 @@ build-app:
 #
 # Exemplo:
 #   make run CMD="npm run lint"
-#
 
 run:
 	@if docker compose ps --status running app | grep -q app; then \
-		docker compose exec -T app $(CMD); \
+		$(DOCKER_EXEC) $(CMD); \
 	else \
-		docker compose run --rm app $(CMD); \
+		$(DOCKER_RUN) $(CMD); \
 	fi

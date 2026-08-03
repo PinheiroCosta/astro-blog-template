@@ -5,7 +5,7 @@
 	build up down clean rebuild shell logs \
 	setup \
 	run \
-	lint format format-check astro-check build-app pre-commit
+	lint format format-check astro-check build-app pre-commit check
 
 # ==============================================================================
 # ENVIRONMENT

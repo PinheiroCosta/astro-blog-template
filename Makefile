@@ -61,6 +61,12 @@ astro-check:
 pre-commit:
 	$(MAKE) run CMD="npm run pre-commit"
 
+# Executa todas as verificações de qualidade utilizando o mesmo ambiente
+# do servidor de desenvolvimento. O Astro/Vite mantém caches internos que
+# podem gerar conflitos de permissão quando executados com UID/GID do host.
+check:
+	$(DOCKER_EXEC_APP) npm run check
+
 # ==============================================================================
 # BUILD
 # ==============================================================================
@@ -75,6 +81,9 @@ UID := $(shell id -u)
 GID := $(shell id -g)
 
 APP_SERVICE := app
+
+DOCKER_EXEC_APP = docker compose exec -T $(APP_SERVICE)
+
 DOCKER_EXEC = docker compose exec -T \
     --user $(UID):$(GID) \
     $(APP_SERVICE)

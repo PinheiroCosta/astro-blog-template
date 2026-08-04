@@ -1,48 +1,107 @@
-# astro-blog-template
+# Astro Blog Template
 
-Template para criação de blogs estáticos utilizando Astro e Cloudflare.
+Uma base moderna para criação de sites estáticos utilizando Astro, TypeScript e Cloudflare.
 
-## Objetivo
+Embora tenha surgido como um template para blogs, o projeto foi concebido para evoluir como uma plataforma reutilizável para diferentes tipos de presença digital, como:
 
-Este repositório serve como base para projetos de blogs reutilizáveis.
+- Blogs
+- Portfólios profissionais
+- Landing Pages
+- Sites institucionais
+- Pequenos negócios
+- Catálogos de produtos e serviços
 
-Características:
+O objetivo é oferecer uma solução rápida, segura, de baixo custo operacional e simples de manter.
+
+---
+
+## Tecnologias
 
 - Astro
 - TypeScript
-- Docker para desenvolvimento
+- Docker
 - Cloudflare Pages
-- Cloudflare R2 (futuramente)
+- Cloudflare R2 _(em desenvolvimento)_
+
+---
+
+## Objetivos do projeto
+
+Este projeto busca:
+
+- servir como base para múltiplos tipos de sites estáticos;
+- reduzir o custo de desenvolvimento de novos projetos;
+- facilitar a colaboração entre desenvolvedores;
+- aplicar boas práticas de Engenharia de Software;
+- permitir implantação simples utilizando Cloudflare.
+
+---
 
 ## Pré-requisitos
+
+São necessários apenas:
 
 - Git
 - Docker
 - Docker Compose
 
-> Não é necessário instalar Node.js ou Astro no host.
+> Não é necessário instalar Node.js, npm ou Astro na máquina host.
+
+---
 
 ## Desenvolvimento
 
-Construir a imagem:
-`docker compose build`
+Construa a imagem:
 
-Iniciar o ambiente:
-`docker compose up`
+```bash
+docker compose build
+```
+
+Inicie o ambiente:
+
+```bash
+docker compose up
+```
 
 A aplicação estará disponível em:
-`http://localhost:4321`
+
+```
+http://localhost:4321
+```
+
+---
 
 ## Reconstrução completa
 
-Caso seja necessário recriar o ambiente do zero:
+Caso seja necessário recriar completamente o ambiente:
 
 ```bash
 docker compose down -v
 docker image rm astro-blog-template-app
+
 rm -rf node_modules
 rm -rf .astro
 
 docker compose build
 docker compose up
 ```
+
+---
+
+## Roadmap
+
+- [x] Ambiente Docker para desenvolvimento
+- [x] Estrutura inicial do projeto
+- [ ] Componentes reutilizáveis
+- [ ] Sistema de navegação
+- [ ] Layout base
+- [ ] Suporte ao Cloudflare R2
+- [ ] Pipeline de CI/CD
+- [ ] Deploy automatizado
+- [ ] Templates para diferentes tipos de sites
+
+---
+
+## Licença
+
+Este projeto é distribuído sob a licença MIT.

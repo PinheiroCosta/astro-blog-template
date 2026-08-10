@@ -1,5 +1,8 @@
 # Astro Blog Template
 
+[![Quality](https://github.com/PinheiroCosta/astro-blog-template/actions/workflows/quality.yml/badge.svg?branch=main)](https://github.com/PinheiroCosta/astro-blog-template/actions/workflows/quality.yml)
+[![Build](https://github.com/PinheiroCosta/astro-blog-template/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/PinheiroCosta/astro-blog-template/actions/workflows/build.yml)
+
 Uma base moderna para criação de sites estáticos utilizando Astro, TypeScript e Cloudflare.
 
 Embora tenha surgido como um template para blogs, o projeto foi concebido para evoluir como uma plataforma reutilizável para diferentes tipos de presença digital, como:

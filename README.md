@@ -1,6 +1,5 @@
 # Astro Blog Template
 
-[![Quality](../../actions/workflows/quality.yml/badge.svg?branch=main)](../../actions/workflows/quality.yml)
 [![Build](../../actions/workflows/build.yml/badge.svg?branch=main)](../../actions/workflows/build.yml)
 
 Uma base moderna para criação de sites estáticos utilizando Astro, TypeScript e Cloudflare.

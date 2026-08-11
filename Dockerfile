@@ -8,7 +8,7 @@ COPY package*.json ./
 
 RUN apt-get update \
  && apt-get install -y git \
- && git config --global --add safe.directory /app \
+ && git config --system --add safe.directory /app \
  && rm -rf /var/lib/apt/lists/*
 
 RUN npm ci \

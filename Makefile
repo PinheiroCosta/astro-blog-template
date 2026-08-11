@@ -59,10 +59,10 @@ pre-commit:
 	$(MAKE) run CMD="npm run pre-commit"
 
 astro-check:
-	$(DOCKER_EXEC_APP) npm run astro:check
+	$(MAKE) run CMD="npm run astro:check"
 
 commit-msg:
-	$(DOCKER_EXEC_APP) npm run commitmsg -- "$(MSG_FILE)"
+	$(MAKE) run CMD="npm run commitmsg -- $(MSG_FILE)"
 
 # Executa todas as verificações de qualidade utilizando o mesmo ambiente
 # do servidor de desenvolvimento. O Astro/Vite mantém caches internos que

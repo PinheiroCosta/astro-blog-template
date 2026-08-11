@@ -25,13 +25,16 @@
     "format:check": "prettier --check .",
     "check": "npm run lint && npm run format:check && npm run astro:check",
     "prepare": "husky",
-    "pre-commit": "lint-staged"
+    "pre-commit": "lint-staged",
+    "commitmsg": "commitlint --edit"
   },
   "dependencies": {
     "astro": "^7.0.9"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
+    "@commitlint/cli": "^21.2.1",
+    "@commitlint/config-conventional": "^21.2.0",
     "@eslint/js": "^10.0.1",
     "@typescript-eslint/parser": "^8.65.0",
     "eslint": "^10.8.0",
